@@ -1,6 +1,6 @@
 ---
-title: Nick Strayer's Resume"
-author: Nick Strayer
+title: Megan Brentlinger's Resume"
+author: Megan Brentlinger
 date: "`r Sys.Date()`"
 output:
   pagedown::html_resume:
@@ -35,7 +35,8 @@ position_data <- read_csv('positions.csv') %>%
     # Build some custom sections by collapsing others
     section = case_when(
       section %in% c('research_positions', 'industry_positions') ~ 'positions', 
-      section %in% c('data_science_writings', 'by_me_press') ~ 'writings',
+      section %in% c('licenses_certifications', 'academic_articles') ~ 'licenses',
+      section %in% c('projects', 'about_me_press') ~ 'projects',
       TRUE ~ section
     )
   ) 
@@ -47,18 +48,18 @@ Aside
 ================================================================================
 
 
-![logo](beta_dist.png){width=100%}
+![logo](bars.jpg){width=100%}
 
 Contact {#contact}
 --------------------------------------------------------------------------------
 
 
 
-- <i class="fa fa-envelope"></i> nick.strayer@gmail.com
-- <i class="fa fa-twitter"></i> NicholasStrayer
-- <i class="fa fa-github"></i> github.com/nstrayer
-- <i class="fa fa-link"></i> [nickstrayer.me](http://nickstrayer.me/)
-- <i class="fa fa-phone"></i> (734) 645-0110
+- <i class="fa fa-envelope"></i> mbrentlinger@gmail.com
+- <i class="fa fa-twitter"></i> none
+- <i class="fa fa-github"></i> github.com/mbrentli
+- <i class="fa fa-link"></i> [LinkedIn](https://www.linkedin.com/in/mbrentlinger/)
+- <i class="fa fa-phone"></i> (123)456-7890
 
 
 
@@ -69,13 +70,9 @@ Language Skills {#skills}
 ```{r}
 skills <- tribble(
   ~skill,               ~level,
-  "R",                  5,
-  "Javascript (d3.js)", 4.5,
-  "Python",             4,
-  "Bash",               3.5,
-  "SQL",                3,
-  "C++",                3,
-  "AWK",                3
+  "R",                  1.5,
+  "Mandarin", 3,
+  "Spanish",             2
 )
 build_skill_bars(skills)
 ```
@@ -85,18 +82,15 @@ build_skill_bars(skills)
 Open Source Contributions {#open-source}
 --------------------------------------------------------------------------------
 
-All projects available at `github.com/nstrayer/<name>`
+All projects available at `github.com/mbrentli/<name>`
 
 
-- `shinysense`: R package to use sensor data in Shiny apps
-- `tuftesque`: Hugo theme (behind LiveFreeOrDichotomize.com)
-- `slid3r`: D3 add-on for fully svg slider inputs
 
 
 More info {#more-info}
 --------------------------------------------------------------------------------
 
-See full CV at nickstrayer.me/cv for more complete list of positions and publications.
+This is a sample resume created for a class assignment.  Some information and details are purely FICTIONAL.
 
 
 Disclaimer {#disclaimer}
@@ -114,13 +108,11 @@ Last updated on `r Sys.Date()`.
 Main
 ================================================================================
 
-Nick Strayer {#title}
+Megan Brentlinger {#title}
 --------------------------------------------------------------------------------
 
 ```{r}
-intro_text <- "I have made [visualizations viewed by hundreds of thousands of people](https://www.nytimes.com/interactive/2016/08/26/us/college-student-migration.html), [sped up query times for 25 terabytes of data by an average of 4,800 times](https://livefreeordichotomize.com/2019/06/04/using_awk_and_r_to_parse_25tb/), and built [packages for R](https://github.com/nstrayer/shinysense) that let you [do magic](http://nickstrayer.me/dataDayTexas/).
-
-Currently searching for a data science position that allows me to build tools using visualization and machine learning to help people explore and understand their data. 
+intro_text <- "I have vast experience in adult education, blended learning, and teaching English as a Foreign/Second Language. I lived in Beijing, China for more than 8 years, which has given me a deep understanding of foreign cultures and often forced me to find ways to thrive while stepping out of my comfort zone. My experience abroad gives me a different worldview that makes me an independent thinker with fresh ideas for solutions to problems. 
 "
 
 
@@ -145,12 +137,26 @@ Selected Positions {data-icon=suitcase}
 position_data %>% print_section('positions')
 ```
 
-Selected Writing {data-icon=newspaper}
+
+Licenses and certifications {data-icon=certificate}
 --------------------------------------------------------------------------------
 
+```{r}
+position_data %>% print_section('licenses')
+```
+
+
+
+Projects {data-icon=sheet-plastic}
+--------------------------------------------------------------------------------
 
 ```{r}
-position_data %>% print_section('writings')
+position_data %>% print_section('projects')
 ```
+
+
+
+
+
 
 
